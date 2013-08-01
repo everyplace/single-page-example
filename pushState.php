@@ -7,7 +7,7 @@
 	//use get just the first part of the query parameter
 	if(isset($_GET)) {
 		//should be a regex
-		$currentPage = explode(".",$_GET['page']);
+		$currentPage = ($_GET['page']) ? explode(".",$_GET['page']) : '0';
 		$currentPage = $currentPage[0];
 		echo $currentPage;
 		
@@ -34,7 +34,7 @@
 					var id = $item.attr("id");
 					
 					$item.click(function(item){
-					
+						item.preventDefault();
 						//when clicked, update the url
 						history.pushState("", "id", id + ".html");
 						
