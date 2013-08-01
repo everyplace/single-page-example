@@ -57,7 +57,7 @@
 	<body>
 		<ul id="pages">
 			<?php foreach($json as $pageID => $page) { ?>
-			<li id="<?php echo $pageID;?>"><?php echo $page->title;?></li>
+			<li id="<?php echo $pageID;?>"><a href="<? echo $pageID.'.html';?>"><?php echo $page->title;?></a></li>
 			<?php } ?>
 		</ul>
 		<?php if($title); {?>
